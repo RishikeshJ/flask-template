@@ -1,0 +1,104 @@
+<h3> Assignment 2 </h3>
+
+
+<h2> Name: Rishikesh Joshi</h2>
+<h2> ID: 1001678891 </h2>
+
+
+
+<form action="{{url_for('question5')}}" method="POST" enctype="multipart/form-data">
+    <p>allow a user to give a net value (two letters, such as "ak"), then please show 
+      the total number of earthquakes ("quakes") with that net value, and give (location and id) the ones 
+      with the largest "magNst" and the smallest "magNst. </p>
+      <h3> Lowest msgNST for given net</h3>
+
+   <h3> Count is: {{count}} </h3>
+    <input type="text" value="" name="netval" placeholder="Net Value">
+    <button type="submit" value="range">Search</button>
+    <br><br>
+    <table border = 1>
+        <thead>
+           <td>ID</td>
+           <td>Location</td>
+           <td>magNst</td>
+        </thead>
+        {% for row in rows1 %}
+        <tr>
+           <td>{{row["id"]}}</td>
+           <td>{{row["place"]}}</td>
+           <td>{{row["magNst"]}}</td>
+        </tr>
+        {% endfor %}
+     </table>
+</form>
+<hr>
+
+<form action="{{url_for('question5par')}}" method="POST" enctype="multipart/form-data">
+   <p>Q5</h3>
+     <h3> Count is: {{ct2}} </h3>
+   <input type="text" value="" name="netvalhi" placeholder="Net Value">
+   <button type="submit" value="range">Search</button>
+   <br><br>
+   <table border = 1>
+       <thead>
+          <td>ID</td>
+          <td>Location</td>
+          <td>magNst</td>
+       </thead>
+       {% for row in rows2 %}
+       <tr>
+          <td>{{row["id"]}}</td>
+          <td>{{row["place"]}}</td>
+          <td>{{row["magNst"]}}</td>
+       </tr>
+       {% endfor %}
+    </table>
+</form>
+<hr>
+
+
+<form action="{{url_for('question8')}}" method="POST" enctype="multipart/form-data">
+   <p>  8. (Web page), Allow a user to give a part of a location name ("Alaska"), and magNst range (for example 3 to 42),
+      and display all quakes that "match", then allow a user to change the location name or magNst values, for any matching
+      quakes.
+      </p>
+   <p>Enter Location 1</p>
+   <h3> Count is: {{ct3}}</h3>
+   <input type="text" value="" name="loc" placeholder="location">
+   <p>Enter Magnitude</p>
+   <input type="text" value="" name="m1" placeholder="Magnitude 1">
+   <input type="text" value="" name="m2" placeholder="Magnitude 2"><br><br>        
+   <button type="submit" value="range">Search</button>
+   <table border = 1>
+      <thead>
+         <td>ID</td>
+         <td>Location</td>
+         <td>magNst</td>
+      </thead>
+      {% for row in rows3 %}
+      <tr>
+         <td>{{row["id"]}}</td>
+         <td>{{row["place"]}}</td>
+         <td>{{row["magNst"]}}</td>
+      </tr>
+      {% endfor %}
+   </table>
+
+   
+
+</form>
+
+
+<hr>
+
+<form action="{{url_for('question8s')}}" method="POST" enctype="multipart/form-data">
+   <p>  8. (Web page), Allow a user to give a part of a location name ("Alaska"), and magNst range (for example 3 to 42),
+      and display all quakes that "match", then allow a user to change the location name or magNst values, for any matching
+      quakes.
+      </p>
+      <input type="text" value="" name="id" placeholder="id to update">
+      <input type="text" value="" name="txt" placeholder="id to update">
+      <button type="submit" value="range">Search</button>
+      
+
+</form>
